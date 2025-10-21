@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gastos - Leticia Fontelas Garcia</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <header>
+    <h1>Controle de Gastos - <strong>Leticia Fontelas Garcia</strong></h1>
+  </header>
+
+  <main>
+    <section id="upload">
+      <label for="notaInput">📸 Envie a foto da nota fiscal:</label>
+      <input type="file" id="notaInput" accept="image/*" capture="environment" />
+    </section>
+
+    <section id="resultado" style="display: none;">
+      <h2>📄 Dados da Nota</h2>
+      <p><strong>Valor detectado:</strong> <span id="valorDetectado">R$ 0,00</span></p>
+
+      <label for="categoria">Categoria:</label>
+      <select id="categoria">
+        <option value="alimentação">Alimentação</option>
+        <option value="lazer">Lazer</option>
+        <option value="compras">Compras</option>
+        <option value="transporte">Transporte</option>
+        <option value="outros">Outros</option>
+      </select>
+
+      <button onclick="salvarGasto()">💾 Salvar</button>
+    </section>
+
+    <section id="historico">
+      <h2>📊 Histórico</h2>
+      <ul id="listaGastos"></ul>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
